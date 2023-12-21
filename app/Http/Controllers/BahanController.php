@@ -12,7 +12,7 @@ class BahanController extends Controller
      */
     public function index()
     {
-        $dataBahan = Bahan::all();
+        $dataBahan = Bahan::paginate(10);
         return view('Bahan.input-bahan', compact('dataBahan'));
     }
 
@@ -73,6 +73,9 @@ class BahanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $bahan = Bahan::findorfail($id);
+        $bahan->delete();
+
+        return back();
     }
 }

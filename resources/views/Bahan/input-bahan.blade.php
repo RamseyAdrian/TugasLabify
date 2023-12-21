@@ -10,28 +10,28 @@
                 <div class="mb-5">
                     <label for="kode-bahan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kode
                         Bahan</label>
-                    <input type="text" id="kode-bahan" name="kodebahan"
+                    <input type="text" id="kode-bahan" name="kode"
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                         required>
                 </div>
                 <div class="mb-5">
                     <label for="nama-bahan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                         Bahan</label>
-                    <input type="text" id="nama-bahan" name="namabahan"
+                    <input type="text" id="nama-bahan" name="nama"
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                         required>
                 </div>
                 <div class="mb-5">
                     <label for="jumlah"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah</label>
-                    <input type="number" name="jumlah" id="jumlah"
+                    <input type="number" name="jumlah" id="jumlah" min="0"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         required>
                 </div>
                 <div class="mb-5">
                     <label for="harga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga
                         Satuan</label>
-                    <input type="number" name="harga" id="harga"
+                    <input type="number" name="harga" id="harga" min="0"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         required>
                 </div>
@@ -56,7 +56,7 @@
                                 Harga Aktif
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Edit</span>
+                                Aksi
                             </th>
                         </tr>
                     </thead>
@@ -77,6 +77,9 @@
                             <td class="px-6 py-4 text-right">
                                 <a href="{{ route('edit-bahan', $item->id) }}"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                |
+                                <a href="{{ route('delete-bahan', $item->id) }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                             </td>
                         </tr>
                         @endforeach

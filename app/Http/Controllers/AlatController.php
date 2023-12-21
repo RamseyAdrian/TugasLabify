@@ -12,7 +12,7 @@ class AlatController extends Controller
      */
     public function index()
     {
-        $dataAlat = Alat::all();
+        $dataAlat = Alat::paginate(10);
         return view('Alat.input-alat', compact('dataAlat'));
     }
 
@@ -72,6 +72,9 @@ class AlatController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $alat = Alat::findorfail($id);
+        $alat->delete();
+
+        return back();
     }
 }
